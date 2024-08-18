@@ -1,10 +1,16 @@
+
+import Navbar from './components/navbar.jsx';
+import Search from './components/search.jsx';
+import Table from './components/table.jsx';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <h1 style = {{color: 'red', backgroundColor:'blue'}} > Hello World </h1>
-    </div>
+    <main>
+      <Navbar />
+      <Search />
+      <Table />
+    </main>
   );
 }
 
