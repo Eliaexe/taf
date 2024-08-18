@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/taf/static/css/main.632686cc.css",
+    "main.js": "/taf/static/js/main.ce2470d4.js",
+    "static/js/453.94ae9386.chunk.js": "/taf/static/js/453.94ae9386.chunk.js",
+    "static/media/logo.svg": "/taf/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/taf/index.html",
+    "main.632686cc.css.map": "/taf/static/css/main.632686cc.css.map",
+    "main.ce2470d4.js.map": "/taf/static/js/main.ce2470d4.js.map",
+    "453.94ae9386.chunk.js.map": "/taf/static/js/453.94ae9386.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.632686cc.css",
+    "static/js/main.ce2470d4.js"
+  ]
+}
