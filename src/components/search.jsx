@@ -10,8 +10,10 @@ export default function Search() {
     event.preventDefault();
     setIsLoading(true);
     setError(null);
+    setSearchResults([]); // Clear previous results
+
     try {
-      const response = await fetch('http://localhost:3001/', {
+      const response = await fetch('http://localhost:3001/api/jobs/search', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -25,14 +27,16 @@ export default function Search() {
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
-      
+
       const data = await response.json();
-      console.log(data);
-      
-      setSearchResults(data);
+
+      if (data.jobs.length === 0) {
+        setError('Nessun lavoro trovato. Prova con altri criteri di ricerca.');
+      } else {
+        setSearchResults(data.jobs);
+      }
     } catch (error) {
-      setError(error.message);
-      console.error("Si è verificato un errore durante la ricerca:", error);
+      setError(`Si è verificato un errore durante la ricerca: ${error.message}`);
     } finally {
       setIsLoading(false);
     }
