@@ -12,31 +12,37 @@ export default function Search() {
     setError(null);
     setSearchResults([]); // Clear previous results
 
+    const params = new URLSearchParams({
+      jobTitle: jobTitle.trim(),
+      jobLocation: location.trim()
+    });
+
     try {
-      const response = await fetch('http://localhost:3001/api/jobs/search', {
-        method: 'POST',
+      const response = await fetch(`https://taf-nima.onrender.com/api/search?${params}`, {
+        method: 'GET',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          jobTitle,
-          jobLocation: location
-        })
       });
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
-
+        
+      if (response.status == 204) {
+        setError('Pas de taf, desole..')
+      }
       const data = await response.json();
+      
 
-      if (data.jobs.length === 0) {
-        setError('Nessun lavoro trovato. Prova con altri criteri di ricerca.');
+      if (data.length === 0 || data == undefined) {
+        setError('Pas de taf, desole..');
       } else {
-        setSearchResults(data.jobs);
+        setSearchResults(data);
       }
     } catch (error) {
-      setError(`Si è verificato un errore durante la ricerca: ${error.message}`);
+      console.log(error);
+      setError('Pas de taf, desole..');
     } finally {
       setIsLoading(false);
     }
