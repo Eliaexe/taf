@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/taf/static/css/main.5787dd8b.css",
-    "main.js": "/taf/static/js/main.555c5185.js",
+    "main.css": "/taf/static/css/main.39cb8b0e.css",
+    "main.js": "/taf/static/js/main.92e6cdd0.js",
     "index.html": "/taf/index.html",
-    "main.5787dd8b.css.map": "/taf/static/css/main.5787dd8b.css.map",
-    "main.555c5185.js.map": "/taf/static/js/main.555c5185.js.map"
+    "main.39cb8b0e.css.map": "/taf/static/css/main.39cb8b0e.css.map",
+    "main.92e6cdd0.js.map": "/taf/static/js/main.92e6cdd0.js.map"
   },
   "entrypoints": [
-    "static/css/main.5787dd8b.css",
-    "static/js/main.555c5185.js"
+    "static/css/main.39cb8b0e.css",
+    "static/js/main.92e6cdd0.js"
   ]
 }
